@@ -12,3 +12,9 @@ class Solution:
     def reverseWords(self, s: str) -> str:
         return " ".join([word[::-1] for word in s.split()])
     
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        result = ""
+        for word in s.split():
+            result = result + " " + word[::-1]
+        return result[1:]
