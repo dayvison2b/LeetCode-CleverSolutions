@@ -18,3 +18,8 @@ class Solution:
         for word in s.split():
             result = result + " " + word[::-1]
         return result[1:]
+    
+    
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        return " ".join(map(lambda x: x[::-1], s.split()))
