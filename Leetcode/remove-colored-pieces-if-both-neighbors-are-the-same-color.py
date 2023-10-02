@@ -20,3 +20,16 @@ class Solution:
                 else:
                     b_count += 1
         return a_count > b_count
+    
+import re
+class Solution:
+    def winnerOfGame(self, colors: str) -> bool:
+        alice = 0
+        bob = 0
+        for match in re.findall("A+", colors):
+            if len(match) > 2:
+                alice += len(match) - 2
+        for match in re.findall("B+", colors):
+            if len(match) > 2:
+                bob += len(match) - 2
+        return alice > bob
