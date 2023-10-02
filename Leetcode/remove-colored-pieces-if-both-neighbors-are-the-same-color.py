@@ -24,8 +24,7 @@ class Solution:
 import re
 class Solution:
     def winnerOfGame(self, colors: str) -> bool:
-        alice = 0
-        bob = 0
+        alice, bob = 0,0
         for match in re.findall("A+", colors):
             if len(match) > 2:
                 alice += len(match) - 2
