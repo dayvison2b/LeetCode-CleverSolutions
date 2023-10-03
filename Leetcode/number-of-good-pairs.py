@@ -9,3 +9,16 @@ class Solution:
                 if nums[i] == nums[j]:
                     goodPairs += 1
         return goodPairs
+        
+class Solution:
+    def numIdenticalPairs(self, nums: List[int]) -> int:
+        #Hashtable Approach
+        count = 0
+        hash = {}
+        for num in nums:
+            hash[num] = hash.get(num,0) + 1
+        for e,v in hash.items():
+            if v <= 1:
+                continue
+            count += v * (v - 1) // 2
+        return count
