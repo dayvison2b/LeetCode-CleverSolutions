@@ -12,6 +12,20 @@ class Solution:
 
 class Solution:
     def numIdenticalPairs(self, nums: List[int]) -> int:
+        # Eficient frequency Approach
+        count = 0
+        hash = {}
+        for num in nums:
+            if num in hash:
+                count += hash[num]
+                hash[num] += 1
+            else:
+                hash[num] = 1
+        return count
+
+
+class Solution:
+    def numIdenticalPairs(self, nums: List[int]) -> int:
         #Hashtable Approach
         count = 0
         hash = {}
