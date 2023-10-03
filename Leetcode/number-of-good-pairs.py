@@ -8,8 +8,8 @@ class Solution:
             for j in range(i + 1, len(nums)):
                 if nums[i] == nums[j]:
                     goodPairs += 1
-        return goodPairs
-        
+        return goodPairs  
+
 class Solution:
     def numIdenticalPairs(self, nums: List[int]) -> int:
         #Hashtable Approach
@@ -22,3 +22,7 @@ class Solution:
                 continue
             count += v * (v - 1) // 2
         return count
+    
+class Solution:
+    def numIdenticalPairs(self, nums: List[int]) -> int:
+        return sum(v * (v - 1) // 2 for v in {num:nums.count(num) for num in nums}.values())
