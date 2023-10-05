@@ -27,3 +27,27 @@ class MyHashMap:
 # obj.put(key,value)
 # param_2 = obj.get(key)
 # obj.remove(key)
+
+class MyHashMap:
+
+    def __init__(self):
+        self.hash = []
+
+    def put(self, key: int, value: int) -> None:
+        for array in self.hash:
+            if key == array[0]:
+                array[1] = value
+                return
+        self.hash.append([key,value])
+
+    def get(self, key: int) -> int:
+        for array in self.hash:
+            if key == array[0]:
+                return array[1]
+        return -1
+
+    def remove(self, key: int) -> None:
+        for i in range(len(self.hash)):
+            if key == self.hash[i][0]:
+                self.hash.pop(i)
+                return
