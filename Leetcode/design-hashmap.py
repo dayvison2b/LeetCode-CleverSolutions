@@ -1,5 +1,11 @@
 # https://leetcode.com/problems/design-hashmap/?envType=daily-question&envId=2023-10-04
 
+# Your MyHashMap object will be instantiated and called as such:
+# obj = MyHashMap()
+# obj.put(key,value)
+# param_2 = obj.get(key)
+# obj.remove(key)
+
 class MyHashMap:
     def __init__(self):
         self.size = 10
@@ -38,11 +44,6 @@ class MyHashMap:
                 del bucket[idx]
                 return
             
-# Your MyHashMap object will be instantiated and called as such:
-# obj = MyHashMap()
-# obj.put(key,value)
-# param_2 = obj.get(key)
-# obj.remove(key)
             
 class MyHashMap:
 
@@ -65,7 +66,6 @@ class MyHashMap:
             idx = self.hashKey.index(key)
             self.hashKey.pop(idx)
             self.hashVal.pop(idx)
-
 
 class MyHashMap:
 
