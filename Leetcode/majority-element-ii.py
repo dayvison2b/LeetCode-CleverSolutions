@@ -1,6 +1,10 @@
 # https://leetcode.com/problems/majority-element-ii/
 
 class Solution:
+    def majorityElement(self, nums):
+        return [num for num, count in Counter(nums).items() if count > len(nums) // 3]
+
+class Solution:
     def majorityElement(self, nums: List[int]) -> List[int]:
         dict = {}
         result = []
@@ -14,10 +18,6 @@ class Solution:
                 
         return result
     
-
-class Solution:
-    def majorityElement(self, nums):
-        return [num for num, count in Counter(nums).items() if count > len(nums) // 3]
     
 class Solution:
     def majorityElement(self, nums: List[int]) -> List[int]:
