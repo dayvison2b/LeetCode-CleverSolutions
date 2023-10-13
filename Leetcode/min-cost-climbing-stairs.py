@@ -23,6 +23,7 @@ class Solution:
         
         return min(dp[n-1], dp[n-2])
     
+    
 class Solution:
     def minCostClimbingStairs(self, cost: List[int]) -> int:
         for i in range(2,len(cost)):
