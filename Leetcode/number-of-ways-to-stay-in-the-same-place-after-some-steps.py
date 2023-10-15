@@ -34,3 +34,23 @@ class Solution:
     def paintWalls(self, cost: List[int], time: List[int]) -> int:
         n=len(cost)
         return self.dp(n-1,cost,time,0,{})
+    
+class Solution:
+    def numWays(self, steps: int, arrLen: int) -> int:
+        mod = 10**9 + 7
+        maxColumn = min(arrLen, steps // 2 + 1)  # Boundary to ensure we can come back
+        
+        curr = [0] * (maxColumn + 1)
+        prev = [0] * (maxColumn + 1)
+        prev[0] = 1
+        
+        for i in range(1, steps + 1):
+            for j in range(maxColumn + 1):
+                curr[j] = prev[j]
+                if j - 1 >= 0:
+                    curr[j] = (curr[j] + prev[j-1]) % mod
+                if j + 1 < maxColumn:
+                    curr[j] = (curr[j] + prev[j+1]) % mod
+            curr, prev = prev, curr  # Swap arrays for the next iteration
+        
+        return prev[0]
